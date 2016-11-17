@@ -29,28 +29,18 @@ html, body {
 
 /* ======== layout  ======== */
 
+
 .grid-full {
 	width:90%;
 	/*border:dotted pink 1px;*/
 	margin:0 auto;
 }
 
-.grid-full.mod-flex {
-	display:flex;
+.grid-100 {
+	width:100%;
+	border:dotted pink 1px;
+	margin:0 auto;
 }
-	.grid-full.mod-flex.mod-flex-wrap {
-		flex-wrap:wrap;
-	}
-
-	.grid-full.mod-flex.mod-space-between {
-		justify-content:space-between;
-
-	}
-
-.grid-full.mod-flex-column {
-	flex-direction: column;
-}
-
 
 .grid-75 {
 	width:74%;
@@ -71,6 +61,29 @@ html, body {
 .grid-7 {
 	width:6%;
 }
+
+/* ======== flex options  ======== */
+
+.mod-flex {
+	display:flex;
+}
+	.mod-flex.mod-flex-wrap {
+		flex-wrap:wrap;
+	}
+
+	.mod-flex.mod-space-between {
+		justify-content:space-between;
+
+	}
+
+	.mod-flex.mod-flex-column {
+		flex-direction: column;
+	}
+
+	.mod-flex.mod-flex-center {
+		justify-content: center;
+		align-items: center;
+	}
 
 /* ======== general  ======== */
 

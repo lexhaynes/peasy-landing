@@ -5,3 +5,27 @@
 	height:auto;
 	background:#FAFAF3;
 }
+
+
+/* ======== Global Header  ======== */
+
+.global-header {
+	background:#fff;
+	color:#FD775B;
+}
+
+	.global-header-links {
+		flex-basis:66%;
+		display: flex;
+		justify-content: space-between;
+	}
+
+/* ======== Banner  ======== */
+
+/* ======== Intro Section  ======== */
+
+/* ======== How it Works  ======== */
+
+/* ======== About Section  ======== */
+
+/* ======== In Season Section  ======== */
