@@ -1,31 +1,236 @@
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+
+/* ======== Globals  ======== */
+
+.global-link:hover,
+.global-link:active,
+.global-link:focus {
+	transition:color 0.2s;
+	color:#85dd60;
+}
+
+.global-button {
+	padding:0.75em 1.5rem;
+	transition:background 0.3s;
+}
+
+.button-container {
+	margin:2rem auto;
+}
+
 /* ======== container  ======== */
 .container {
 	width:100%;
 	min-height:91.5%;
 	height:auto;
 	background:#FAFAF3;
+	overflow-x:hidden;
 }
 
+/* ======== sections  ======== */
+
+.section {
+	padding:4rem 0;
+}
+
+	.section-title {
+		 font-weight: 600;
+    	font-size: 1.5rem;
+    	padding-bottom:1rem;
+	}
+
+/* ======== overrides  ======== */
 
 /* ======== Global Header  ======== */
 
 .global-header {
 	background:#fff;
 	color:#FD775B;
+	height:50px;
+	position: fixed;
+	width:100%;
+	transition:background 0.3s;
 }
 
+	.global-header.inverted {
+		background:#FD775B;
+		color:#fff;
+	}
+
 	.global-header-links {
-		flex-basis:66%;
+		flex-basis:50%;
 		display: flex;
 		justify-content: space-between;
 	}
 
+	.global-header-link { padding-bottom:4px; border-bottom:solid transparent 2px; color:inherit ;}
+
+	.global-header-link:hover,
+	.global-header-link:active,
+	.global-header-link:focus {
+		color:inherit;
+		border-bottom:solid #FD775B 2px;
+		transition:border 0.4s;
+	}
+
+	.global-header.inverted .global-header-link:hover,
+	.global-header.inverted .global-header-link:active,
+	.global-header.inverted .global-header-link:focus {
+		border-bottom:solid #fff 2px;
+	}
+
+	.global-header.inverted .global-header-login-link { color:inherit; }
+
+	.global-header-login, .global-header-links {
+		font-size:0.85rem;
+		align-items:center;
+	}
+
+	.global-header-login {
+		display: flex;
+	}
+
+		.global-header-login-link:hover,
+		.global-header-login-link:active,
+		.global-header-login-link:focus {font-weight:900;}
+
 /* ======== Banner  ======== */
+
+.banner {
+	display: flex;
+	height:500px;
+	background: url('../img/banner.jpg') #85dd60 no-repeat center 100%;
+	background-size:cover;
+}
+
+	.banner-title {
+		color:#fff;
+		font-weight:600;
+		font-size:2.5rem;
+		padding-bottom:2rem;
+	}
 
 /* ======== Intro Section  ======== */
 
+.section.mod-intro {
+
+}
+
+/* ======== Info Box  ======== */
+
+.info-boxes { margin:2rem 0; }
+.info-box {
+	width:28%;
+}
+
+	.info-box-img {
+		margin:1.5rem auto;
+		background:url() #ccc no-repeat center center;
+		background-size:cover;
+		width:100px;
+		height:100px;
+		border-radius:50%;
+	}
+
+	.info-box-title {
+		font-weight:600;
+		text-align:center;
+		font-size:1.15rem;
+		margin:2rem auto 1rem auto;
+		min-height:2.75rem; /*to accomondate for double line title*/
+	}
+
+	.info-box-content {
+		margin:1rem auto;
+		line-height:1.5rem;
+		text-align:center;
+		font-size:0.9rem;
+	}
+
+
 /* ======== How it Works  ======== */
+
+.section.mod-how {
+	background:#fff;
+}
+
+/* ======== How it Works Boxes  ======== */
+
+.how-boxes { margin:2rem 0; }
+.how-box {
+	margin:2rem 0;
+	padding:1rem 0;
+}
+
+	.how-box-title {
+		font-weight:600;
+		font-size:1.15rem;
+		margin-bottom:1.5rem;
+	}
+
+	.how-box-img {
+		background:url('') #ccc no-repeat center center;
+		background-size:cover;
+		border-radius:2px;
+		width:40%;
+		height:200px;
+		border:dotted #ccc 1px;
+	}
+
+	.how-box-content {
+		width:50%;
+    	line-height: 1.5rem;
+    	font-size: 0.9rem;
+	}
 
 /* ======== About Section  ======== */
 
+
 /* ======== In Season Section  ======== */
+
+.section.mod-season {
+	background:#fff;
+}
+
+/* ======== Slider  ======== */
+
+.slider {
+	margin:2rem 0;
+	border:solid red 1px;
+}
+
+
+/* ======== coming-soon ======== */
+
+.coming-soon {
+	margin:100px 0;
+}
+
+.banner-title.coming-soon {
+	color:#4A4A4A;
+}
+
+/* ======== Footer  ======== */
+
+.footer-nav-link {
+	padding-right:0;
+}
+
+
+.nav-social-link {
+	text-decoration:none;
+	color: inherit;
+	padding-right:10px;
+}
+
+.nav-social-link:hover,
+.nav-social-link:active,
+.nav-social-link:focus {
+	color: #85dd60;
+}
+
+
+

@@ -27,6 +27,8 @@ html, body {
 	letter-spacing:0.65px;
 }
 
+a {cursor:pointer !important;}
+
 /* ======== layout  ======== */
 
 
@@ -38,7 +40,6 @@ html, body {
 
 .grid-100 {
 	width:100%;
-	border:dotted pink 1px;
 	margin:0 auto;
 }
 
@@ -62,25 +63,28 @@ html, body {
 	width:6%;
 }
 
+.mod-center {
+	margin: 0 auto;
+}
 /* ======== flex options  ======== */
 
 .mod-flex {
 	display:flex;
 }
-	.mod-flex.mod-flex-wrap {
+	.mod-flex-wrap {
 		flex-wrap:wrap;
 	}
 
-	.mod-flex.mod-space-between {
+	.mod-space-between {
 		justify-content:space-between;
 
 	}
 
-	.mod-flex.mod-flex-column {
+	.mod-flex-column {
 		flex-direction: column;
 	}
 
-	.mod-flex.mod-flex-center {
+	.mod-flex-center {
 		justify-content: center;
 		align-items: center;
 	}
@@ -108,7 +112,17 @@ html, body {
 }
 
 .global-button.mod-primary:hover {
+	background:#df6a51;
+}
+
+.global-button.mod-secondary {
 	background:#85dd60;
+	color:#fff;
+	border-radius:4px;
+}
+
+.global-button.mod-secondary:hover {
+	background:#6db74e;
 }
 
 .global-button.mod-link {
@@ -210,6 +224,7 @@ html, body {
 
 	}
 
+
 /* ======== footer ======== */
 
 .footer {
@@ -237,7 +252,7 @@ html, body {
 	.footer-nav-link:hover {
 		color:#FD775B;
 	}
-	.footer-nav-link.mod-no-padding {
+	.footer-nav-link.mod-no-padding, .nav-social-link.mod-no-padding {
 		padding:0;
 	}
 
