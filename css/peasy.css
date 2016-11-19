@@ -130,6 +130,16 @@ a {cursor:pointer !important;}
 	text-decoration:none;
 }
 
+.global-button.mod-disabled {
+	background:#ccc;
+	cursor: default;
+}
+.global-button.mod-disabled:hover,
+.global-button.mod-disabled:active,
+.global-button.mod-disabled:focus {
+	background:#ccc;
+}
+
 .global-button-secondary {
 
 }
@@ -137,9 +147,20 @@ a {cursor:pointer !important;}
 .global-link {
 	color:#FD775B;
 	text-decoration:none;
+	transition:color 0.3s;
 }
 
-.global-link-invert {
+
+.global-link.mod-secondary {
+	color:#85dd60;
+	text-decoration:none;
+	
+}
+
+.global-link.mod-secondary:hover,
+.global-link.mod-secondary:active,
+.global-link.mod-secondary:focus {
+	color:#6db74e;
 }
 
 .global-header {
@@ -222,6 +243,77 @@ a {cursor:pointer !important;}
 	}
 	.global-header-cart-summary {
 
+	}
+
+/* ======== form fields ======== */
+
+	.form-fields {
+		margin-top:2.5rem;
+	}
+
+	.form-field {
+		display: inline-block;
+		margin: 0.5rem 0.25rem 0.5rem 0;
+	}
+
+	.form-label {
+
+	}
+
+	.form-field-input {
+	    border: solid #ccc 1px;
+	    background:#fff;
+	    height:40px;
+	    margin: 1rem 0;
+	    border-radius: 2px;
+	    display: block;
+	   	width:100%;
+	   	padding:0;
+	   	border-radius:2px;
+	   	text-indent:10px;
+	}	
+
+	.form-field-input.mod-text {
+
+	}
+
+	.form-field-input.mod-number {
+
+	}
+
+	.form-field-input.mod-textarea {
+		display: block;
+		height:5rem;
+		padding-top:1rem;
+	}
+
+	.form-field-input.mod-select {
+		padding-left:auto;
+	}
+
+	/*mod for product summary component*/
+	.form-field-input.mod-quantity-select {
+		width:100px;
+		margin:0 1rem;
+	}
+
+	.form-button {
+		padding:.5rem 1.5rem;
+		border-radius:4px;
+		color:#fff;
+		height:40px;
+
+	}
+
+	.form-button.mod-cancel {
+		background:#ccc;
+	}
+	.form-button.mod-cancel:hover {
+		background:#ebebeb;
+	}
+
+	.form-button.mod-save {
+		
 	}
 
 
