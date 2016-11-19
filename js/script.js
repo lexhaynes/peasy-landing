@@ -1,6 +1,9 @@
 var nodes = {
 	nav: document.getElementsByClassName('global-header')[0],
 	banner: document.getElementsByClassName('banner')[0],
+	signupButton: document.getElementsByClassName('button-signup'),
+	signupModal: document.getElementsByClassName('modal mod-signup')[0],
+	closeButton: document.getElementsByClassName('modal-close')[0],
 }
 
 var els = {
@@ -13,7 +16,41 @@ var handlers = {
 		if (window.scrollY > els.bannerClientHeight) {
 			if (!nodes.nav.classList.contains('inverted')) nodes.nav.classList.add('inverted');
 		} else if (nodes.nav.classList.contains('inverted')) nodes.nav.classList.remove('inverted');
-	}
+	},
+
+	click: function(e) {
+		//make sure we're only detecting the button containers and not the button children
+		var button = e.target == this ? e.target : e.target.parentElement;
+		//signup button handler
+		if (button.classList.contains('button-signup')) {
+			console.log('signup');
+			if (nodes.signupModal.classList.contains('is-hidden')) {
+				nodes.signupModal.classList.remove('is-hidden');
+			}
+		}
+
+		//signin button handler
+		if (button.classList.contains('button-signin')) {
+			console.log('signin')
+		}
+
+		//close button handler
+		if (button.classList.contains('modal-close')) {
+			if (!button.parentElement.classList.contains('is-hidden')) {
+				button.parentElement.classList.add('is-hidden');
+			}
+		}
+
+	},
 }
 
 window.addEventListener('scroll', handlers.scroll, false);
+
+//add event listener to sign up buttons
+for (var i = 0; i < nodes.signupButton.length; i++) {
+	var button = nodes.signupButton[i];
+	console.log(button);
+	button.addEventListener('click', handlers.click, false);
+}
+
+nodes.closeButton.addEventListener('click', handlers.click, false);

@@ -16,6 +16,66 @@
 <body>
 
 	<div class="container">
+
+	<div class="modal mod-signup is-hidden">
+		<div class="modal-overlay"></div>
+
+		<button class="global-button modal-close"><i class="fa fa-times"></i></button>
+			
+		<div class="modal-content">
+
+			<header class="global-header mod-unfixed">
+				<div class="grid-full mod-flex mod-flex-center">
+					<a href = "#" class="global-header-logo">
+						PEASY
+						<i class="global-header-logo-icon fa fa-leaf"></i>
+					</a>
+				</div>
+			</header>
+
+			<section class = "section mod-form">
+				<div class="grid-full mod-center mod-flex mod-flex-center mod-flex-column">
+					<div class="section-title form-title">Create Your Account</div>
+					<div class="form-fields">
+						<div class="form-field grid-50">
+							<label for="firstName">First Name</label>
+							<input type="text" class = "form-field-input mod-text" name="firstName" placeholder="First Name" />
+						</div>
+						<div class="form-field grid-50 util-float-right form-right">
+							<label for="lastName">Last Name</label>
+							<input type="text" class = "form-field-input mod-text" name="lastName" placeholder="Last Name" />
+						</div>
+						<div class="util-clear"></div>
+
+						<div class="form-field grid-100">
+							<label for="email">Email</label>
+							<input type="text" class = "form-field-input mod-text" name="email" placeholder="Email " />
+						</div>
+
+						<div class="form-field grid-100">
+							<label for="password">Password</label>
+							<input type="password" class = "form-field-input mod-text" name="password" placeholder="Password" />
+						</div>					
+						<div class="form-field grid-100">
+							<label for="passwordConfirm">Confirm Password</label>
+							<input type="password" class = "form-field-input mod-text" name="passwordConfirm" placeholder="Confirm Password" />
+						</div>
+
+						<div class="form-field grid-50">
+							<label for="zip">ZIP Code</label>
+							<input type="number" class = "form-field-input mod-number" name="zip" placeholder="ZIP Code" />
+						</div>
+						<br>
+						<div class="form-field grid-100">
+							<button class="global-button mod-primary grid-100 mod-disabled">Create Your Account</button>
+						</div>
+					</div><!--end form fields-->
+					<p>Already have an account? <a class = "global-link mod-secondary" href="../sign-in">Sign In.</a></p>
+				</div>
+			</section>
+		</div>
+	</div>
+
 		
 		<!--HEADER-->
 		<header class="global-header">
@@ -42,7 +102,7 @@
 				<div class="banner-title">We Prep. You Cook.</div>
 				
 				<div class="button-container">
-					<a href="sign-up" class="global-button mod-primary">Try it Now</a>
+					<button class="global-button mod-primary button-signup">Try it Now</a>
 				</div>
 			</div>
 		</section>

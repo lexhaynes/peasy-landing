@@ -263,9 +263,68 @@ body {
 	color:#4A4A4A;
 }
 
+/* ======== Modal Overlay ======== */
+
+.modal { 
+	display: flex;
+    justify-content: center; 
+}
+
+.modal.is-hidden {
+	display:none;
+	opacity:0;
+}
+
+	.modal-close {
+		color: #fff;
+    	z-index: 999;
+    	position: absolute;
+    	right: 20vh;
+    	font-size:1.5rem;
+
+	}
+	.modal-close:hover,
+	.modal-close:active,
+	.modal-close:focus {
+		color: #ccc;
+	}
+
+	.modal-overlay {
+	    width: 100%;
+	    height: 100%;
+	    position: fixed;
+	    background: #000;
+	    z-index: 998;
+	    opacity: 0.9;
+	    overflow: hidden;
+	}
+
+	.modal-content {
+		z-index: 999;
+	    position: absolute;
+	    background: #fff;
+	    border-radius:3px;
+	    width:60%;
+	   	min-height:90vh;
+	   	height:auto;
+	    overflow:scroll;
+	    margin-top:12vh;
+	    border-top:solid #FD775B 6px;
+	}
+
 /* ======== SignUp/LogIn Form  ======== */
 
-.form-fields {width:100%;}
+.section.mod-form {padding-top:2rem;}
+
+.form-title {font-size:1.25rem;}
+
+label {font-size:0.85rem;}
+
+.form-fields {width:100%; margin-top:1rem;}
+
+.form-right {
+    margin-right: 0;
+}
 
 
 /* ======== Footer  ======== */
