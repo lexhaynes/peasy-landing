@@ -1,5 +1,5 @@
 var nodes = {
-	nav: document.getElementsByClassName('global-header')[0],
+	nav: document.getElementsByClassName('global-header')[1],
 	banner: document.getElementsByClassName('banner')[0],
 	signupButton: document.getElementsByClassName('button-signup'),
 	signupModal: document.getElementsByClassName('modal mod-signup')[0],
