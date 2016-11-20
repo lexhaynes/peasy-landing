@@ -1,8 +1,10 @@
 var nodes = {
+	container: document.getElementsByClassName('container')[0],
 	nav: document.getElementsByClassName('global-header')[1],
 	banner: document.getElementsByClassName('banner')[0],
 	signupButton: document.getElementsByClassName('button-signup'),
 	signupModal: document.getElementsByClassName('modal mod-signup')[0],
+	modalOverlay: document.getElementsByClassName('modal-overlay')[0],
 	closeButton: document.getElementsByClassName('modal-close')[0],
 }
 
@@ -41,8 +43,6 @@ var utils = (function() {
 	};
 })();
 
-console.log(nodes.nav);
-
 
 var handlers = {
 	scroll: function() {
@@ -63,9 +63,14 @@ var handlers = {
 		//signup button handler
 		if (button.classList.contains('button-signup')) {
 			console.log('signup');
-			if (nodes.signupModal.classList.contains('is-hidden')) {
-				nodes.signupModal.classList.remove('is-hidden');
-			}
+			nodes.signupModal.classList.remove('is-hidden');
+			utils.removeClass(nodes.signupModal, 'is-hidden');
+
+			//add cutoff class to container
+			utils.addClasses([
+				[nodes.container, 'is-cutoff'],
+				[nodes.modal-overlay, 'is-cutoff'],
+			]);
 		}
 
 		//signin button handler

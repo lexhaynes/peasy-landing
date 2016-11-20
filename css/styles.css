@@ -30,6 +30,8 @@ body {
 	overflow-x:hidden;
 }
 
+	.container.is-cutoff { height:1000px; overflow:hidden;}
+
 .container.form {
 	background:#fff;
 }
@@ -296,7 +298,6 @@ body {
 	    background: #000;
 	    z-index: 998;
 	    opacity: 0.9;
-	    overflow: hidden;
 	}
 
 	.modal-content {
