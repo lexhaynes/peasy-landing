@@ -11,11 +11,50 @@ var els = {
 	bannerClientHeight: Number(window.getComputedStyle(nodes.banner).height.replace(/\D/g,'')),
 }
 
+var utils = (function() {
+
+	return {
+		addClass: function(el, className) {
+			if (!el.classList.contains(className)) {
+				el.classList.add(className)
+			}
+		},
+
+		removeClass: function(el, className) {
+			if (el.classList.contains(className)) {
+				el.classList.remove(className)
+			}
+		},
+
+		addClasses: function(args) {
+			args.map(function(key, index) {
+				utils.addClass(key[0], key[1]);
+			})
+		},
+
+		removeClasses: function(args) {
+			args.map(function(key, index) {
+				utils.removeClass(key[0], key[1]);
+			})
+		},
+
+	};
+})();
+
+console.log(nodes.nav);
+
+
 var handlers = {
 	scroll: function() {
 		if (window.scrollY > els.bannerClientHeight) {
-			if (!nodes.nav.classList.contains('inverted')) nodes.nav.classList.add('inverted');
-		} else if (nodes.nav.classList.contains('inverted')) nodes.nav.classList.remove('inverted');
+			console.log('add invert class');
+			utils.addClass(nodes.nav, 'inverted')
+			
+		}  else {
+			console.log('remove invert class');
+			utils.removeClass(nodes.nav, 'inverted')
+
+		}
 	},
 
 	click: function(e) {
