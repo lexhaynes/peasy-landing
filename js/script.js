@@ -6,7 +6,11 @@ var nodes = {
 	signupModal: document.getElementsByClassName('modal mod-signup')[0],
 	modalOverlay: document.getElementsByClassName('modal-overlay')[0],
 	closeButton: document.getElementsByClassName('modal-close')[0],
-	menuButton: document.getElementsByClassName('hamburger-menu')[0],
+	menuButton: document.getElementsByClassName('hamburger-menu')[0], 
+	howBox2: document.getElementsByClassName('how-box2')[0], 
+	howBoxImg2: document.getElementsByClassName('how-box-img2')[0], 
+	howBoxContent2: document.getElementsByClassName('how-box-content2')[0], 
+	 
 }
 
 var els = {
@@ -50,6 +54,14 @@ var utils = (function() {
 
 	};
 })();
+
+var howBox = {
+	swapItems: function(parent, node1, node2) {
+		console.log(node1);
+		console.log(node2);
+		parent.insertBefore(node1, node2);
+	}	
+}
 
 
 var handlers = {
@@ -96,7 +108,17 @@ var handlers = {
 		}
 
 	},
+
+	load: function() {
+		console.log('load');
+		//switch how box image positions
+		howBox.swapItems(nodes.howBox2, nodes.howBoxContent2, nodes.howBoxImg2);
+
+
+	},
 }
+
+window.addEventListener('load', handlers.load, false);
 
 window.addEventListener('scroll', handlers.scroll, false);
 

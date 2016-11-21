@@ -168,9 +168,11 @@ body {
 		border-radius:50%;
 	}
 
-	.info-box-img1 {background-image:url('../img/crate.jpg')},
-	.info-box-img2 {background-image:url('../img/prep.jpg')},
-	.info-box-img3 {background-image:url()}
+	.info-box-img1 {background-image:url('../img/crate.jpg')}
+
+	.info-box-img2 {background-position: 0; background-image:url('../img/prep.jpg')}
+
+	.info-box-img3 {background-image:url(../img/market.jpg)}
 
 
 	.info-box-title {
@@ -212,15 +214,14 @@ body {
 	.how-box-img {
 		background:url('') #ccc no-repeat center center;
 		background-size:cover;
-		border-radius:2px;
+		border-radius:4px;
 		width:40%;
 		height:200px;
-		border:dotted #ccc 1px;
 	}
 
-	.how-box-img:nth-of-type(1) { background-image:url('../img/crate.jpg') }
-	.how-box-img:nth-of-type(2) { background-image:url('../img/crate.jpg') }
-	.how-box-img:nth-of-type(1) { background-image:url('../img/crate.jpg') }
+	.how-box-img1 { background-image:url('../img/crate.jpg') }
+	.how-box-img2 { background-image:url('../img/prep.jpg') }
+	.how-box-img3 { background-image:url('../img/cooked.jpg') }
 
 	.how-box-content {
 		width:50%;
@@ -229,6 +230,10 @@ body {
 	}
 
 /* ======== About Section  ======== */
+
+	.mod-about .info-box-img1 { background-image:url('../img/kid.jpg') }
+	.mod-about .info-box-img2 {     background-position: 36% center; background-image:url('../img/gardener.jpg') }
+	.mod-about .info-box-img3 { background-position: 22% center;  background-image:url('../img/girls.jpg') }
 
 
 /* ======== In Season Section  ======== */

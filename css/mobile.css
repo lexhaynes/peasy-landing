@@ -110,6 +110,9 @@
 
 	.section.mod-how .mod-flex {display:flex;}
 
+	.how-boxes.grid-50 {width:90%;}
+
+		.how-box-content {margin:1rem 0;}
 /* ======== About Section  ======== */
 
 /* ======== In Season Section  ======== */
@@ -130,7 +133,7 @@
 	.global-header-logo {float:left;}
 	.global-header-menu-items {float:right;}
 
-	
+
 
 /* ======== Banner  ======== */
 
