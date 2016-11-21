@@ -6,11 +6,19 @@ var nodes = {
 	signupModal: document.getElementsByClassName('modal mod-signup')[0],
 	modalOverlay: document.getElementsByClassName('modal-overlay')[0],
 	closeButton: document.getElementsByClassName('modal-close')[0],
+	menuButton: document.getElementsByClassName('hamburger-menu')[0],
 }
 
 var els = {
 	navClientHeight: Number(window.getComputedStyle(nodes.nav).height.replace(/\D/g,'')),
 	bannerClientHeight: Number(window.getComputedStyle(nodes.banner).height.replace(/\D/g,'')),
+}
+
+var state = {
+	mobileBreakpoint: 1024,
+	screenSize: document.documentElement.clientWidth,
+	isMobile: false,
+	menuButtonClicked: false
 }
 
 var utils = (function() {
@@ -74,7 +82,17 @@ var handlers = {
 
 			//remove cutoff class from 
 			utils.removeClass(nodes.container, 'is-cutoff');
+		}
 
+		//hamburger menu handler
+		if (button.classList.contains('hamburger-menu')) {
+			if (!state.menuButtonClicked) {
+				utils.removeClass(button.nextElementSibling, 'is-hidden');
+				state.menuButtonClicked = true;
+			} else {
+				utils.addClass(button.nextElementSibling, 'is-hidden');
+				state.menuButtonClicked = false;
+			}
 		}
 
 	},
@@ -89,3 +107,5 @@ for (var i = 0; i < nodes.signupButton.length; i++) {
 }
 
 nodes.closeButton.addEventListener('click', handlers.click, false);
+
+nodes.menuButton.addEventListener('click', handlers.click, false);

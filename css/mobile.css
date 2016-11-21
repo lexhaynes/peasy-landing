@@ -1,26 +1,120 @@
 /* Smaller Screen */
 @media screen and (max-width: 1024px)  {
 
-	html { font-size: 20px; border:solid purple 2px;}
+	html { font-size: 20px; }
+
+/* ======== GENERAL  ======== */	
+
+	.button-container {display:table;}
 
 
 /* ======== Global Header  ======== */
 	.global-header-logo {align-self:center;}
 
-	.global-header-menu-items {  }
+	.global-header-menu-items { width:auto;  }
 
 	.mobile-visible { display:block; }
 	
+	.global-header-menu-items { 
+
+	}
+
+		.global-header-menu-items-list {
+			display:block;
+		    position: absolute;
+		    background: #fff;
+		    width: 200px;
+		    right: 0;
+		    top:50px;
+		    transition:transform 0.5s;
+		    transform:translateX(0);
+		    z-index:4;
+		}
+
+		.global-header-menu-items-list.is-hidden {
+			transform:translateX(100%);
+		}
+
+		.global-header-links, .global-header-link, .global-header-login { display:block;}
+
+		.global-header-links {
+			margin-top:0;
+		}
+
+		.global-header-link {
+			border:none;
+			transition:background 0.15s;
+			padding:1rem ;
+		}
+
+		.global-header-login-link {padding:1rem; width:100%; text-align:left; transition:background 0.15s;}
+
+
+		/*menu dropdown*/
+		.global-header-link:hover,
+		.global-header-link:active,
+		.global-header-link:focus, 		
+		.global-header-login-link:hover,
+		.global-header-login-link:active,
+		.global-header-login-link:focus {
+			border:none;
+			color:#fff;
+			font-weight:inherit;
+			background:#FD775B;
+		}
+
+		/*inverted menu dropdown*/
+		.global-header.inverted .global-header-link,
+		.global-header.inverted .global-header-link,
+		.global-header.inverted .global-header-link, 		
+		.global-header.inverted .global-header-login-link,
+		.global-header.inverted .global-header-login-link,
+		.global-header.inverted .global-header-login-link {
+			color:#fff;
+			background:#FD775B;
+		}
+
+		.global-header.inverted .global-header-link:hover,
+		.global-header.inverted .global-header-link:active,
+		.global-header.inverted .global-header-link:focus, 		
+		.global-header.inverted .global-header-login-link:hover,
+		.global-header.inverted .global-header-login-link:active,
+		.global-header.inverted .global-header-login-link:focus {
+			border:none;
+			color:#FD775B;
+			font-weight:inherit;
+			background:#fff;
+		}
+
+/* ======== Modal  ======== */		
+
+	.modal-content { width:100%; overflow:auto; margin-top:8vh;}
+	.modal-close {right:0vh;}
+
+/* ======== Sections  ======== */	
+	
+	.section .mod-flex {display:block; margin:1rem auto;}
+
+	.section-title {text-align:center;}
 
 /* ======== Banner  ======== */
 
 /* ======== Intro Section  ======== */
 
+	.info-box {
+	    width: 60%;
+	    margin: 3rem auto;
+	}
+
 /* ======== How it Works  ======== */
+
+	.section.mod-how .mod-flex {display:flex;}
 
 /* ======== About Section  ======== */
 
 /* ======== In Season Section  ======== */
+
+	.slider-box, .slider-box-img {max-width:100%; width:100%;}
 
 
 }
@@ -28,19 +122,38 @@
 /* Mobile Screen */
 @media screen and (max-width: 600px)  {
 
-	html { font-size: 18px; }
+	html { font-size: 16px; }
 
 /* ======== Global Header  ======== */
+
+.global-header .grid-full {display:table; margin:0 auto;}
+	.global-header-logo {float:left;}
+	.global-header-menu-items {float:right;}
+
+	
 
 /* ======== Banner  ======== */
 
 /* ======== Intro Section  ======== */
 
+	.info-box {
+	    width: 90%;
+	    margin: 1rem auto;
+	}
+
 /* ======== How it Works  ======== */
+
+	.section.mod-how .mod-flex {display:block;}
+
+	.how-box-content, .how-box-img  {width:100%;}
+
+
 
 /* ======== About Section  ======== */
 
-/* ======== In Season Section  ======== */
+/* ======== Footer  ======== */
+
+	.footer, .footer-nav {display:block;}
 
 
 }

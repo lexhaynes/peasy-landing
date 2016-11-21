@@ -89,6 +89,10 @@ a {cursor:pointer !important;}
 		align-items: center;
 	}
 
+	.mod-center-self {
+		align-self:center;
+	}
+
 /* ======== general  ======== */
 
 .global-button {
@@ -102,7 +106,6 @@ a {cursor:pointer !important;}
 	font-family: inherit;
 	font-size:inherit;
 	letter-spacing: inherit;
-
 }
 
 .global-button.mod-primary {
@@ -148,6 +151,7 @@ a {cursor:pointer !important;}
 	color:#FD775B;
 	text-decoration:none;
 	transition:color 0.3s;
+	cursor:pointer;
 }
 
 
@@ -208,7 +212,6 @@ a {cursor:pointer !important;}
 	margin:0 auto;
 	display: block;
 }
-
 
 /* ======== global header ======== */
 

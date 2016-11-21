@@ -73,21 +73,37 @@ body {
 		padding-top:1rem;
 	}
 
-	.global-header-links {
-		flex-basis:50%;
-		display: flex;
-		justify-content: space-between;
+	.global-header-logo {
+		align-self: center;
 	}
 
-	.global-header-link { padding-bottom:4px; border-bottom:solid transparent 2px; color:inherit ;}
-
-	.global-header-link:hover,
-	.global-header-link:active,
-	.global-header-link:focus {
-		color:inherit;
-		border-bottom:solid #FD775B 2px;
-		transition:border 0.4s;
+	.global-header-menu-items, .global-header-menu-items-list {
+	    width: 80%;
+	    align-self: center;
+	    display: flex;
+	    justify-content: space-between;
 	}
+
+		.global-header-menu-items-list {
+			width: 100%;
+		}
+
+		.global-header-links {
+			flex-basis:50%;
+			display: flex;
+			justify-content: space-between;
+			margin-top:6px;
+		}
+
+		.global-header-link { padding-bottom:4px; border-bottom:solid transparent 2px; color:inherit ;}
+
+		.global-header-link:hover,
+		.global-header-link:active,
+		.global-header-link:focus {
+			color:inherit;
+			border-bottom:solid #FD775B 2px;
+			transition:border 0.4s;
+		}
 
 	.global-header.inverted .global-header-link:hover,
 	.global-header.inverted .global-header-link:active,
@@ -95,7 +111,8 @@ body {
 		border-bottom:solid #fff 2px;
 	}
 
-	.global-header.inverted .global-header-login-link { color:inherit; }
+	.global-header.inverted .global-header-login-link, .global-header.inverted .hamburger-menu { color:inherit; }
+
 
 	.global-header-login, .global-header-links {
 		font-size:0.85rem;
@@ -110,7 +127,8 @@ body {
 		.global-header-login-link:active,
 		.global-header-login-link:focus {font-weight:900;}
 
-	.mobile-visible { display:none; }
+	.mobile-visible  { display:none; }
+
 
 /* ======== Banner  ======== */
 
