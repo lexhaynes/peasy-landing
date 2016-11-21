@@ -46,20 +46,13 @@ var utils = (function() {
 
 var handlers = {
 	scroll: function() {
-		if (window.scrollY > els.bannerClientHeight) {
-			console.log('add invert class');
-			utils.addClass(nodes.nav, 'inverted')
-			
-		}  else {
-			console.log('remove invert class');
-			utils.removeClass(nodes.nav, 'inverted')
-
-		}
+		window.scrollY > els.bannerClientHeight ? utils.addClass(nodes.nav, 'inverted') : utils.removeClass(nodes.nav, 'inverted');
 	},
 
 	click: function(e) {
 		//make sure we're only detecting the button containers and not the button children
 		var button = e.target == this ? e.target : e.target.parentElement;
+		
 		//signup button handler
 		if (button.classList.contains('button-signup')) {
 			console.log('signup');
@@ -67,10 +60,7 @@ var handlers = {
 			utils.removeClass(nodes.signupModal, 'is-hidden');
 
 			//add cutoff class to container
-			utils.addClasses([
-				[nodes.container, 'is-cutoff'],
-				[nodes.modal-overlay, 'is-cutoff'],
-			]);
+			utils.addClass(nodes.container, 'is-cutoff');
 		}
 
 		//signin button handler
@@ -80,9 +70,11 @@ var handlers = {
 
 		//close button handler
 		if (button.classList.contains('modal-close')) {
-			if (!button.parentElement.classList.contains('is-hidden')) {
-				button.parentElement.classList.add('is-hidden');
-			}
+			utils.addClass(button.parentElement, 'is-hidden');
+
+			//remove cutoff class from 
+			utils.removeClass(nodes.container, 'is-cutoff');
+
 		}
 
 	},
@@ -93,7 +85,6 @@ window.addEventListener('scroll', handlers.scroll, false);
 //add event listener to sign up buttons
 for (var i = 0; i < nodes.signupButton.length; i++) {
 	var button = nodes.signupButton[i];
-	console.log(button);
 	button.addEventListener('click', handlers.click, false);
 }
 

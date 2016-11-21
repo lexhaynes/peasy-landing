@@ -1,9 +1,11 @@
 /* Smaller Screen */
 @media screen and (max-width: 1024px)  {
 
-	html { font-size: 24px; }
+	html { font-size: 20px; border:solid purple 2px;}
+
 
 /* ======== Global Header  ======== */
+	.global-header-logo {align-self:center;}
 
 /* ======== Banner  ======== */
 
