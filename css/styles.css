@@ -59,6 +59,7 @@ body {
 	position: fixed;
 	width:100%;
 	transition:background 0.3s;
+	align-items: center;
 }
 
 	.global-header.inverted {
@@ -108,6 +109,8 @@ body {
 		.global-header-login-link:hover,
 		.global-header-login-link:active,
 		.global-header-login-link:focus {font-weight:900;}
+
+	.mobile-visible { display:none; }
 
 /* ======== Banner  ======== */
 

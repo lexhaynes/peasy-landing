@@ -7,6 +7,11 @@
 /* ======== Global Header  ======== */
 	.global-header-logo {align-self:center;}
 
+	.global-header-menu-items {  }
+
+	.mobile-visible { display:block; }
+	
+
 /* ======== Banner  ======== */
 
 /* ======== Intro Section  ======== */
