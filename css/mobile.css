@@ -129,13 +129,15 @@
 
 /* ======== Global Header  ======== */
 
-.global-header .grid-full {display:table; margin:0 auto;}
+	.global-header .grid-full {display:table; margin:0 auto;}
 	.global-header-logo {float:left;}
 	.global-header-menu-items {float:right;}
 
 
 
 /* ======== Banner  ======== */
+
+	.banner-title, .section-title {width:90%; text-align:center; display:table; margin-left:auto; margin-right:auto;}
 
 /* ======== Intro Section  ======== */
 
@@ -156,7 +158,9 @@
 
 /* ======== Footer  ======== */
 
-	.footer, .footer-nav {display:block;}
+	.footer, .footer-nav, .footer-nav-link {display:block;}
+	.footer-nav-link {margin:1rem auto;}
+	.footer-social {display:table; width:auto; margin:1rem auto;}
 
 
 }

@@ -242,6 +242,7 @@ body {
 	background:#fff;
 }
 
+
 /* ======== Slider  ======== */
 
 .slider {
@@ -272,6 +273,11 @@ body {
 		margin:0 auto;
 	}
 
+	.slider-box-img1 { background-image:url('../img/squash.jpg') }
+	.slider-box-img2 { background-image:url('../img/turnip.jpg') }
+	.slider-box-img3 { background-image:url('../img/kohlrabi.jpg') }
+	.slider-box-img4 { background-image:url('../img/kale.jpg') }
+
 	.slider-box-link {
 		display:table;
 		margin:1.5rem auto 0 auto;
@@ -289,6 +295,8 @@ body {
 	.slider-arrow:hover,
 	.slider-arrow:active,
 	.slider-arrow:focus { color:#6db74e; }
+
+
 
 /* ======== coming-soon ======== */
 
