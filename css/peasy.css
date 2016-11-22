@@ -63,6 +63,8 @@ a {cursor:pointer !important;}
 	width:6%;
 }
 
+.grid-7, .grid-10, .grid-20, .grid-25, .grid-50, .grid-75, .grid-full { max-width:1440px; }
+
 .mod-center {
 	margin: 0 auto;
 }

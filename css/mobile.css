@@ -88,7 +88,7 @@
 
 /* ======== Modal  ======== */		
 
-	.modal-content { width:100%; overflow:auto; margin-top:8vh;}
+	.modal-content { width:100%; overflow:auto; margin-top:12vh;}
 	.modal-close {right:0vh;}
 
 /* ======== Sections  ======== */	
@@ -123,7 +123,7 @@
 }
 
 /* Mobile Screen */
-@media screen and (max-width: 600px)  {
+@media screen and (max-width: 800px)  {
 
 	html { font-size: 16px; }
 
@@ -136,6 +136,10 @@
 
 
 /* ======== Banner  ======== */
+
+	.banner {height:350px;}
+
+	.banner-title {margin-top:3rem; padding-bottom:0;}
 
 	.banner-title, .section-title {width:90%; text-align:center; display:table; margin-left:auto; margin-right:auto;}
 

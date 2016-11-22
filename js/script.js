@@ -19,10 +19,13 @@ var els = {
 }
 
 var state = {
-	mobileBreakpoint: 1024,
-	screenSize: document.documentElement.clientWidth,
+	screenSize: 1440,
 	isMobile: false,
 	menuButtonClicked: false
+}
+
+var constants = {
+	mobileBreakpoint: 800,
 }
 
 var utils = (function() {
@@ -52,75 +55,107 @@ var utils = (function() {
 			})
 		},
 
+		isMobile: function() {
+			return state.screenSize > constants.mobileBreakpoint ? false : true;
+		},
+
+		getScreenSize: function() {
+			return document.documentElement.clientWidth;
+		}
+
 	};
 })();
 
 var howBox = {
+	//optimize these two
 	swapItems: function(parent, node1, node2) {
-		console.log(node1);
-		console.log(node2);
 		parent.insertBefore(node1, node2);
-	}	
+	},
+
+}
+
+var observers = {
+	updateMobileState: function() {
+		state.isMobile = utils.isMobile();
+	},
 }
 
 
-var handlers = {
-	scroll: function() {
-		window.scrollY > els.bannerClientHeight ? utils.addClass(nodes.nav, 'inverted') : utils.removeClass(nodes.nav, 'inverted');
-	},
 
-	click: function(e) {
-		//make sure we're only detecting the button containers and not the button children
-		var button = e.target == this ? e.target : e.target.parentElement;
-		
-		//signup button handler
-		if (button.classList.contains('button-signup')) {
-			console.log('signup');
-			nodes.signupModal.classList.remove('is-hidden');
-			utils.removeClass(nodes.signupModal, 'is-hidden');
+var handlers = (function(){
 
-			//add cutoff class to container
-			utils.addClass(nodes.container, 'is-cutoff');
-		}
+	return {
+		scroll: function() {
+			window.scrollY > els.bannerClientHeight ? utils.addClass(nodes.nav, 'inverted') : utils.removeClass(nodes.nav, 'inverted');
+		},
 
-		//signin button handler
-		if (button.classList.contains('button-signin')) {
-			console.log('signin')
-		}
+		click: function(e) {
+			//make sure we're only detecting the button containers and not the button children
+			var button = e.target == this ? e.target : e.target.parentElement;
+			
+			//signup button handler
+			if (button.classList.contains('button-signup')) {
+				console.log('signup');
+				nodes.signupModal.classList.remove('is-hidden');
+				utils.removeClass(nodes.signupModal, 'is-hidden');
 
-		//close button handler
-		if (button.classList.contains('modal-close')) {
-			utils.addClass(button.parentElement, 'is-hidden');
-
-			//remove cutoff class from 
-			utils.removeClass(nodes.container, 'is-cutoff');
-		}
-
-		//hamburger menu handler
-		if (button.classList.contains('hamburger-menu')) {
-			if (!state.menuButtonClicked) {
-				utils.removeClass(button.nextElementSibling, 'is-hidden');
-				state.menuButtonClicked = true;
-			} else {
-				utils.addClass(button.nextElementSibling, 'is-hidden');
-				state.menuButtonClicked = false;
+				//add cutoff class to container
+				utils.addClass(nodes.container, 'is-cutoff');
 			}
-		}
 
-	},
+			//signin button handler
+			if (button.classList.contains('button-signin')) {
+				console.log('signin')
+			}
 
-	load: function() {
-		console.log('load');
-		//switch how box image positions
-		howBox.swapItems(nodes.howBox2, nodes.howBoxContent2, nodes.howBoxImg2);
+			//close button handler
+			if (button.classList.contains('modal-close')) {
+				utils.addClass(button.parentElement, 'is-hidden');
 
+				//remove cutoff class from 
+				utils.removeClass(nodes.container, 'is-cutoff');
+			}
 
-	},
-}
+			//hamburger menu handler
+			if (button.classList.contains('hamburger-menu')) {
+				if (!state.menuButtonClicked) {
+					utils.removeClass(button.nextElementSibling, 'is-hidden');
+					state.menuButtonClicked = true;
+				} else {
+					utils.addClass(button.nextElementSibling, 'is-hidden');
+					state.menuButtonClicked = false;
+				}
+			}
+
+		},
+
+		load: function() {
+			handlers.init();
+		},
+
+		resize: function() {
+			handlers.init();
+		},
+
+		init: function() {
+			state.screenSize = utils.getScreenSize();
+			//console.log('resized state.screen_size: ' + state.screenSize);
+			observers.updateMobileState();
+
+			if (state.isMobile) {
+				//switch how box image positions
+				howBox.swapItems(nodes.howBox2, nodes.howBoxContent2, nodes.howBoxImg2);
+			}  //else swap them back
+		},
+	}
+})();
+
 
 window.addEventListener('load', handlers.load, false);
 
 window.addEventListener('scroll', handlers.scroll, false);
+
+window.addEventListener('resize', handlers.resize, false);
 
 //add event listener to sign up buttons
 for (var i = 0; i < nodes.signupButton.length; i++) {
